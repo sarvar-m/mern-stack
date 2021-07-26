@@ -5,6 +5,7 @@ import axios from "axios";
 import { isAuth } from "./helpers";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import NavBar from "../core/NavBar";
 
 const Signup = () => {
   const [values, setValues] = useState({
@@ -141,7 +142,7 @@ const Signup = () => {
   );
 
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         {isAuth() ? <Redirect to="/" /> : null}
@@ -155,7 +156,7 @@ const Signup = () => {
           Forgot Password
         </Link>
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

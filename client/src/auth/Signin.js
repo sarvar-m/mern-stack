@@ -5,6 +5,7 @@ import axios from "axios";
 import { authenticate, isAuth } from "./helpers";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import NavBar from "../core/NavBar";
 
 const Signin = ({ history }) => {
   const [values, setValues] = useState({
@@ -44,9 +45,10 @@ const Signin = ({ history }) => {
             // confirmPasswordError: "",
           });
           // toast.success(`Hey ${response.data.user.name}, Welcome back!`);
-          isAuth() && isAuth().role === "admin"
-            ? history.push("/admin")
-            : history.push("/private");
+          // isAuth() && isAuth().role === "admin"
+          //   ? history.push("/admin")
+          //   : history.push("/private");
+          isAuth() && history.push("/home");
         });
 
         // save the response (user, token) localstorage / cookie
@@ -94,7 +96,7 @@ const Signin = ({ history }) => {
   );
 
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         {isAuth() ? <Redirect to="/" /> : null}
@@ -108,7 +110,7 @@ const Signin = ({ history }) => {
           Forgot Password
         </Link>
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

@@ -5,6 +5,7 @@ import axios from "axios";
 import jwt from "jsonwebtoken";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import NavBar from "../core/NavBar";
 
 const Activate = ({ match }) => {
   const [values, setValues] = useState({
@@ -58,12 +59,12 @@ const Activate = ({ match }) => {
   );
 
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         {activationLink()}
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

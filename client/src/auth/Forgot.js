@@ -3,6 +3,7 @@ import Layout from "../core/Layout";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import NavBar from "../core/NavBar";
 
 const Forgot = ({ history }) => {
   const [values, setValues] = useState({
@@ -66,13 +67,13 @@ const Forgot = ({ history }) => {
   );
 
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         <h1 className="p-5 text-center">Forgot password</h1>
         {passwordForgotForm()}
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

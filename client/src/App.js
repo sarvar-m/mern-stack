@@ -1,9 +1,10 @@
 import React from "react";
 import Layout from "./core/Layout";
+import NavBar from "./core/NavBar";
 
 const App = () => {
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3 text-center">
         <h1 className="p-5">MyFamily Home Page</h1>
         <h2>MERN STACK</h2>
@@ -15,7 +16,7 @@ const App = () => {
           perspiciatis est iste! In, ea!
         </p>
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

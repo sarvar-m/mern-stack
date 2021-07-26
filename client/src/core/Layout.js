@@ -11,12 +11,55 @@ const Layout = ({ children, match, history }) => {
     }
   };
   const nav = () => (
-    <ul className="nav nav-tabs bg-primary">
+    <ul className="nav nav-tabs bg-primary ">
+      <li className="nav-item">
+        <Link
+          to="/"
+          className="justify-content-start nav-link"
+          style={isActive("/")}
+        >
+          MyFamilyLogo
+        </Link>
+      </li>
+
       <li className="nav-item">
         <Link to="/" className=" nav-link" style={isActive("/")}>
           Home
         </Link>
       </li>
+
+      {isAuth() && (
+        <li className="nav-item">
+          <Link to="/dairy" className="nav-link" style={isActive("/dairy")}>
+            Dairy
+          </Link>
+        </li>
+      )}
+
+      {isAuth() && (
+        <li className="nav-item">
+          <Link to="/events" className="nav-link" style={isActive("/events")}>
+            Events
+          </Link>
+        </li>
+      )}
+
+      {isAuth() && (
+        <li className="nav-item">
+          <Link to="/gallery" className="nav-link" style={isActive("/gallery")}>
+            Gallery
+          </Link>
+        </li>
+      )}
+
+      {isAuth() && (
+        <li className="nav-item">
+          <Link to="/invite" className="nav-link" style={isActive("/invite")}>
+            Invite
+          </Link>
+        </li>
+      )}
+
       {!isAuth() && (
         <Fragment>
           <li className="nav-item">
@@ -29,11 +72,7 @@ const Layout = ({ children, match, history }) => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/signup"
-              className=" nav-link"
-              style={isActive("/signup")}
-            >
+            <Link to="/signup" className="nav-link" style={isActive("/signup")}>
               Sign Up
             </Link>
           </li>
@@ -57,7 +96,7 @@ const Layout = ({ children, match, history }) => {
       )}
 
       {isAuth() && (
-        <li className="nav-item">
+        <li className=" nav-item">
           <span
             className="nav-link"
             style={{ cursor: "pointer", color: "#fff" }}

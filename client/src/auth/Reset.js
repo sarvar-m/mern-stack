@@ -4,6 +4,7 @@ import Layout from "../core/Layout";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import NavBar from "../core/NavBar";
 
 const Reset = ({ match }) => {
   const [values, setValues] = useState({
@@ -79,13 +80,13 @@ const Reset = ({ match }) => {
   );
 
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         <h1 className="p-5 text-center">Hey {name}, Type your new password.</h1>
         {resetPasswordForm()}
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

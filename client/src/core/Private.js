@@ -5,6 +5,7 @@ import axios from "axios";
 import { isAuth, getCookie, signout, updateUser } from "../auth/helpers";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import NavBar from "./NavBar";
 
 const Private = ({ history }) => {
   const [values, setValues] = useState({
@@ -186,14 +187,14 @@ const Private = ({ history }) => {
   );
 
   return (
-    <Layout>
+    <NavBar>
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         <h1 className="pt-5 text-center">Private</h1>
         <p className="lead text-center">Profile Update</p>
         {updateForm()}
       </div>
-    </Layout>
+    </NavBar>
   );
 };
 

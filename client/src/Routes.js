@@ -10,6 +10,11 @@ import Admin from "./core/Admin";
 import AdminRoute from "./auth/AdminRoute";
 import Forgot from "./auth/Forgot";
 import Reset from "./auth/Reset";
+import Dairy from "./auth/Dairy";
+import Events from "./auth/Events";
+import Gallery from "./auth/Gallery";
+import Invite from "./auth/Invite";
+import Home from "./auth/Home";
 
 const Routes = () => {
   return (
@@ -18,6 +23,11 @@ const Routes = () => {
         <Route exact path="/" component={App} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/signin" component={Signin} />
+        <Route exact path="/dairy" component={Dairy} />
+        <Route exact path="/events" component={Events} />
+        <Route exact path="/gallery" component={Gallery} />
+        <Route exact path="/invite" component={Invite} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/auth/activate/:token" component={Activate} />
         <PrivateRoute exact path="/private" component={Private} />
         <AdminRoute exact path="/admin" component={Admin} />
